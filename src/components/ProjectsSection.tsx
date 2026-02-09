@@ -110,7 +110,7 @@ export function ProjectsSection() {
           className="mb-16">
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="text-blue-500 font-mono text-xl mr-2">05.</span>
+            <span className="text-teal-500 font-mono text-xl mr-2">05.</span>
             Portfolio Projects
           </h2>
           <motion.div
@@ -127,7 +127,7 @@ export function ProjectsSection() {
               duration: 0.8,
               delay: 0.2
             }}
-            className="h-1 bg-blue-600 rounded-full" />
+            className="h-1 bg-teal-600 rounded-full" />
 
         </motion.div>
 
@@ -164,7 +164,7 @@ export function ProjectsSection() {
                     stiffness: 300
                   }}>
 
-                    <Folder className="w-10 h-10 text-blue-500" />
+                    <Folder className="w-10 h-10 text-teal-500" />
                   </motion.div>
                   <div className="flex gap-3">
                     {project.link !== '#' &&
@@ -172,24 +172,21 @@ export function ProjectsSection() {
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-400 hover:text-blue-500 transition-colors">
+                    className="text-zinc-400 hover:text-teal-500 transition-colors">
 
                         <ExternalLink className="w-5 h-5" />
                       </a>
                   }
                   </div>
                 </div>
-
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors">
                   {project.name}
                 </h3>
-
                 <p className="text-zinc-400 mb-4 text-sm">
                   {project.description}
                 </p>
-
                 <div className="mt-auto flex justify-between items-center text-xs font-mono">
-                  <span className="text-blue-500">{project.type}</span>
+                  <span className="text-teal-500">{project.type}</span>
                   <span className="text-zinc-600">{project.status}</span>
                 </div>
               </Card>

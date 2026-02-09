@@ -21,7 +21,7 @@ export function Card({
       }
       className={`
         bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden
-        ${hoverEffect ? 'hover:shadow-[0_0_30px_rgba(59,130,246,0.15)] hover:border-blue-500/30 transition-all duration-300' : ''}
+        ${hoverEffect ? 'hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] hover:border-teal-500/30 transition-all duration-300' : ''}
         ${className}
       `}>
 

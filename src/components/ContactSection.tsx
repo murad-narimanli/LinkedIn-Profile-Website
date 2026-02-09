@@ -24,7 +24,7 @@ export function ContactSection() {
           }}
           className="text-center mb-16">
 
-          <h2 className="text-blue-500 font-mono text-lg mb-4">
+          <h2 className="text-teal-500 font-mono text-lg mb-4">
             06. What's Next?
           </h2>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -99,18 +99,18 @@ export function ContactSection() {
               <div className="flex flex-col space-y-4">
                 <a
                   href="mailto:narimanli.murad@gmail.com"
-                  className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
+                  className="flex items-center text-zinc-400 hover:text-teal-500 transition-colors group">
 
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-teal-500/10 transition-colors">
                     <Mail className="w-5 h-5" />
                   </div>
                   <span>narimanli.murad@gmail.com</span>
                 </a>
                 <a
                   href="tel:+994556230599"
-                  className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
+                  className="flex items-center text-zinc-400 hover:text-teal-500 transition-colors group">
 
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-teal-500/10 transition-colors">
                     <Phone className="w-5 h-5" />
                   </div>
                   <span>+994 55 623 05 99</span>
@@ -119,9 +119,9 @@ export function ContactSection() {
                   href="https://github.com/murad-narimanli"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
+                  className="flex items-center text-zinc-400 hover:text-teal-500 transition-colors group">
 
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-teal-500/10 transition-colors">
                     <Github className="w-5 h-5" />
                   </div>
                   <span>github.com/murad-narimanli</span>
@@ -130,21 +130,20 @@ export function ContactSection() {
                   href="https://www.linkedin.com/in/murad-n%C9%99rimanl%C4%B1-549389130/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
+                  className="flex items-center text-zinc-400 hover:text-teal-500 transition-colors group">
 
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-teal-500/10 transition-colors">
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <span>linkedin.com/in/murad-nərimanlı</span>
                 </a>
               </div>
             </div>
-
             <div className="p-6 bg-zinc-900/50 rounded-xl border border-zinc-800">
               <p className="text-zinc-400 italic">
                 "The only way to do great work is to love what you do."
               </p>
-              <p className="text-blue-500 font-mono mt-2 text-sm">
+              <p className="text-teal-500 font-mono mt-2 text-sm">
                 - Steve Jobs
               </p>
             </div>

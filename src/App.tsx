@@ -10,7 +10,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 export function App() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen text-white selection:bg-blue-500/30 selection:text-blue-200">
+    <div className="bg-[#0a0a0a] min-h-screen text-white selection:bg-teal-500/30 selection:text-teal-200">
       <Navbar />
       <main>
         <HeroSection />

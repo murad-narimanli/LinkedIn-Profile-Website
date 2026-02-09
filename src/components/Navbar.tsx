@@ -31,9 +31,7 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -66,7 +64,6 @@ export function Navbar() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
           <motion.a
             href="#"
             onClick={(e) => scrollToSection(e, '#hero')}
@@ -82,12 +79,11 @@ export function Navbar() {
               delay: 0.2,
               duration: 0.5
             }}
-            className="text-xl font-bold font-mono tracking-tighter text-white hover:text-blue-500 transition-colors">
+            className="text-xl font-bold font-mono tracking-tighter text-white hover:text-teal-500 transition-colors">
 
             &lt;Murad /&gt;
           </motion.a>
 
-          {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link, index) =>
             <motion.a
@@ -106,7 +102,7 @@ export function Navbar() {
                 delay: 0.3 + index * 0.1,
                 duration: 0.5
               }}
-              className="text-sm font-medium text-zinc-400 hover:text-blue-500 transition-colors">
+              className="text-sm font-medium text-zinc-400 hover:text-teal-500 transition-colors">
 
                 {link.name}
               </motion.a>
@@ -145,7 +141,6 @@ export function Navbar() {
             </motion.div>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -161,7 +156,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen &&
         <motion.div
@@ -185,7 +179,7 @@ export function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
-              className="block px-3 py-3 text-base font-medium text-zinc-400 hover:text-blue-500 hover:bg-zinc-900 rounded-md">
+              className="block px-3 py-3 text-base font-medium text-zinc-400 hover:text-teal-500 hover:bg-zinc-900 rounded-md">
 
                   {link.name}
                 </a>

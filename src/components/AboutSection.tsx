@@ -1,7 +1,6 @@
-import React, { useEffect, useState, useRef, Component } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Code, Coffee, Globe, Terminal } from 'lucide-react';
-// Animated Counter Component
 const Counter = ({ value }: {value: string;}) => {
   const [count, setCount] = useState(0);
   const numericValue = parseInt(value.replace(/\D/g, '')) || 0;
@@ -68,7 +67,6 @@ export function AboutSection() {
           ease: 'linear'
         }} />
 
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{
@@ -88,7 +86,7 @@ export function AboutSection() {
           className="mb-16">
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="text-blue-500 font-mono text-xl mr-2">01.</span>
+            <span className="text-teal-500 font-mono text-xl mr-2">01.</span>
             About Me
           </h2>
           <motion.div
@@ -105,7 +103,7 @@ export function AboutSection() {
               duration: 0.8,
               delay: 0.2
             }}
-            className="h-1 bg-blue-600 rounded-full" />
+            className="h-1 bg-teal-600 rounded-full" />
 
         </motion.div>
 
@@ -130,7 +128,7 @@ export function AboutSection() {
 
             <p>
               Hello! My name is Murad and I am a{' '}
-              <span className="text-blue-400 font-medium">
+              <span className="text-teal-400 font-medium">
                 Senior Software Developer
               </span>{' '}
               based in Baku, Azerbaijan. I have over 7 years of experience
@@ -138,11 +136,11 @@ export function AboutSection() {
             </p>
             <p>
               I specialize in modern frontend technologies including{' '}
-              <span className="text-blue-400 font-medium">Vue 2/3</span>,{' '}
-              <span className="text-blue-400 font-medium">React</span>, and{' '}
-              <span className="text-blue-400 font-medium">Next.js</span>. My
+              <span className="text-teal-400 font-medium">Vue 2/3</span>,{' '}
+              <span className="text-teal-400 font-medium">React</span>, and{' '}
+              <span className="text-teal-400 font-medium">Next.js</span>. My
               expertise extends to designing{' '}
-              <span className="text-blue-400 font-medium">
+              <span className="text-teal-400 font-medium">
                 Micro-frontend architectures
               </span>{' '}
               for better module isolation and scalability.
@@ -185,9 +183,9 @@ export function AboutSection() {
                   duration: 0.2
                 }
               }}
-              className="bg-zinc-900/50 border border-zinc-800 p-6 rounded-xl hover:border-blue-500/50 transition-colors group">
+              className="bg-zinc-900/50 border border-zinc-800 p-6 rounded-xl hover:border-teal-500/50 transition-colors group">
 
-                <stat.icon className="w-8 h-8 text-blue-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
+                <stat.icon className="w-8 h-8 text-teal-500 mb-4 group-hover:scale-110 transition-transform duration-300" />
                 <div className="text-3xl font-bold text-white mb-1">
                   <Counter value={stat.value} />
                 </div>

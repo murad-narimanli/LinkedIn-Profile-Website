@@ -16,7 +16,6 @@ export function HeroSection() {
   const typingSpeed = 100;
   const deletingSpeed = 50;
   const pauseTime = 2000;
-  // Typewriter Effect
   useEffect(() => {
     const handleTyping = () => {
       const currentRole = roles[roleIndex];
@@ -38,7 +37,6 @@ export function HeroSection() {
     );
     return () => clearTimeout(timer);
   }, [displayText, isDeleting, roleIndex]);
-  // Canvas Particle Animation
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -75,16 +73,14 @@ export function HeroSection() {
         if (!ctx) return;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(59, 130, 246, 0.5)';
+        ctx.fillStyle = 'rgba(20, 184, 166, 0.5)';
         ctx.fill();
       }
     }
     const initParticles = () => {
       particles = [];
       const particleCount = Math.min(window.innerWidth / 10, 100);
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-      }
+      for (let i = 0; i < particleCount; i++) particles.push(new Particle());
     };
     const animate = () => {
       if (!ctx) return;
@@ -92,14 +88,13 @@ export function HeroSection() {
       particles.forEach((particle, i) => {
         particle.update();
         particle.draw();
-        // Draw connections
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particle.x - particles[j].x;
           const dy = particle.y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           if (distance < 150) {
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(59, 130, 246, ${0.1 * (1 - distance / 150)})`;
+            ctx.strokeStyle = `rgba(20, 184, 166, ${0.1 * (1 - distance / 150)})`;
             ctx.lineWidth = 1;
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -156,7 +151,6 @@ export function HeroSection() {
         ref={canvasRef}
         className="absolute inset-0 w-full h-full opacity-30 pointer-events-none" />
 
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           variants={containerVariants}
@@ -164,11 +158,8 @@ export function HeroSection() {
           animate="visible"
           className="flex flex-col items-center">
 
-          {/* Profile Photo with Animated Border */}
           <motion.div variants={itemVariants} className="relative mb-8 group">
-            {/* Animated Gradient Ring */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-full opacity-75 blur-sm animate-spin-slow" />
-
+            <div className="absolute -inset-1 bg-gradient-to-r from-teal-600 via-cyan-600 to-teal-600 rounded-full opacity-75 blur-sm animate-spin-slow" />
             <motion.div
               animate={{
                 y: [0, -10, 0]
@@ -190,28 +181,25 @@ export function HeroSection() {
 
           <motion.h2
             variants={itemVariants}
-            className="text-blue-500 font-mono text-lg mb-4 tracking-wide">
+            className="text-teal-500 font-mono text-lg mb-4 tracking-wide">
 
             Hi, my name is
           </motion.h2>
-
           <motion.h1
             variants={itemVariants}
             className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
 
             Murad Nərimanlı
           </motion.h1>
-
           <motion.div
             variants={itemVariants}
             className="h-12 md:h-16 mb-8 flex items-center justify-center">
 
             <span className="text-2xl md:text-4xl text-zinc-400 font-mono">
-              I am a <span className="text-blue-400">{displayText}</span>
-              <span className="animate-pulse text-blue-500">|</span>
+              I am a <span className="text-teal-400">{displayText}</span>
+              <span className="animate-pulse text-teal-500">|</span>
             </span>
           </motion.div>
-
           <motion.p
             variants={itemVariants}
             className="max-w-2xl mx-auto text-zinc-400 text-lg mb-10 leading-relaxed">
@@ -220,7 +208,6 @@ export function HeroSection() {
             high-scale fintech, banking, and gaming platforms. Specialized in
             Vue 2/3, React, Next.js, and Micro-frontend architectures.
           </motion.p>
-
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -234,18 +221,6 @@ export function HeroSection() {
                 Contact Me
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-              <motion.div
-                className="absolute inset-0 bg-blue-600"
-                initial={{
-                  x: '100%'
-                }}
-                whileHover={{
-                  x: 0
-                }}
-                transition={{
-                  duration: 0.3
-                }} />
-
             </Button>
             <Button variant="outline" size="lg" className="group">
               View Resume
@@ -255,7 +230,6 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
       <motion.div
         initial={{
           opacity: 0
@@ -278,23 +252,14 @@ export function HeroSection() {
               repeat: Infinity,
               duration: 1.5
             }}
-            className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+            className="w-1.5 h-1.5 bg-teal-500 rounded-full" />
 
         </div>
       </motion.div>
 
-      <style jsx>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 8s linear infinite;
-        }
+      <style>{`
+        @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .animate-spin-slow { animation: spin-slow 8s linear infinite; }
       `}</style>
     </section>);
 

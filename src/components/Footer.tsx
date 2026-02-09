@@ -26,7 +26,7 @@ export function Footer() {
             href="https://github.com/murad-narimanli"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-500 hover:text-blue-500 transition-colors hover:scale-110 transform duration-200">
+            className="text-zinc-500 hover:text-teal-500 transition-colors hover:scale-110 transform duration-200">
 
             <Github className="w-5 h-5" />
           </a>
@@ -34,13 +34,13 @@ export function Footer() {
             href="https://www.linkedin.com/in/murad-n%C9%99rimanl%C4%B1-549389130/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-500 hover:text-blue-500 transition-colors hover:scale-110 transform duration-200">
+            className="text-zinc-500 hover:text-teal-500 transition-colors hover:scale-110 transform duration-200">
 
             <Linkedin className="w-5 h-5" />
           </a>
           <a
             href="#"
-            className="text-zinc-500 hover:text-blue-500 transition-colors hover:scale-110 transform duration-200">
+            className="text-zinc-500 hover:text-teal-500 transition-colors hover:scale-110 transform duration-200">
 
             <Twitter className="w-5 h-5" />
           </a>

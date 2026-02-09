@@ -30,7 +30,6 @@ export function EducationSection() {
   return (
     <section id="education" className="py-24 bg-[#0a0a0a] relative">
       <div className="absolute inset-0 bg-dot-pattern opacity-20 pointer-events-none" />
-
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{
@@ -50,7 +49,7 @@ export function EducationSection() {
           className="mb-16">
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="text-blue-500 font-mono text-xl mr-2">03.</span>
+            <span className="text-teal-500 font-mono text-xl mr-2">03.</span>
             Education
           </h2>
           <motion.div
@@ -67,7 +66,7 @@ export function EducationSection() {
               duration: 0.8,
               delay: 0.2
             }}
-            className="h-1 bg-blue-600 rounded-full" />
+            className="h-1 bg-teal-600 rounded-full" />
 
         </motion.div>
 
@@ -93,10 +92,10 @@ export function EducationSection() {
 
               <Card
               hoverEffect
-              className="p-6 md:p-8 border-l-4 border-l-blue-500 relative overflow-hidden group">
+              className="p-6 md:p-8 border-l-4 border-l-teal-500 relative overflow-hidden group">
 
                 <motion.div
-                className="absolute top-0 left-0 w-1 h-full bg-blue-400"
+                className="absolute top-0 left-0 w-1 h-full bg-teal-400"
                 initial={{
                   height: 0
                 }}
@@ -107,7 +106,6 @@ export function EducationSection() {
                   duration: 1,
                   delay: 0.5 + index * 0.1
                 }} />
-
 
                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 relative z-10">
                   <div className="flex-1">
@@ -127,18 +125,17 @@ export function EducationSection() {
                         delay: 0.3 + index * 0.1
                       }}>
 
-                        <GraduationCap className="w-6 h-6 text-blue-500" />
+                        <GraduationCap className="w-6 h-6 text-teal-500" />
                       </motion.div>
-                      <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-xl font-bold text-white group-hover:text-teal-400 transition-colors">
                         {edu.degree}
                       </h3>
                     </div>
-                    <h4 className="text-lg text-blue-400 font-medium mb-3">
+                    <h4 className="text-lg text-teal-400 font-medium mb-3">
                       {edu.school}
                     </h4>
                     <p className="text-zinc-400">{edu.description}</p>
                   </div>
-
                   <div className="flex flex-col gap-2 text-sm text-zinc-500 font-mono min-w-[200px] md:text-right">
                     <span className="flex items-center md:justify-end gap-2">
                       <Calendar className="w-4 h-4" />
