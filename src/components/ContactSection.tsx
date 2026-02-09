@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './ui/Button';
 import { Input, TextArea } from './ui/Input';
-import { Github, Linkedin, Mail, Send } from 'lucide-react';
+import { Github, Linkedin, Mail, Send, Phone } from 'lucide-react';
 export function ContactSection() {
   return (
     <section id="contact" className="py-24 bg-[#0a0a0a]">
@@ -25,15 +25,15 @@ export function ContactSection() {
           className="text-center mb-16">
 
           <h2 className="text-blue-500 font-mono text-lg mb-4">
-            04. What's Next?
+            06. What's Next?
           </h2>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Get In Touch
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">
-            I'm always open to discussing new entertainment projects,
-            partnerships, and creative opportunities. Feel free to reach out —
-            I'd love to hear from you!
+            I'm currently open to new opportunities and collaborations. Whether
+            you have a question or just want to say hi, I'll try my best to get
+            back to you!
           </p>
         </motion.div>
 
@@ -98,13 +98,33 @@ export function ContactSection() {
               <h3 className="text-xl font-bold text-white mb-4">Connect</h3>
               <div className="flex flex-col space-y-4">
                 <a
-                  href="#"
+                  href="mailto:narimanli.murad@gmail.com"
+                  className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
+
+                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <span>narimanli.murad@gmail.com</span>
+                </a>
+                <a
+                  href="tel:+994556230599"
+                  className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
+
+                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <span>+994 55 623 05 99</span>
+                </a>
+                <a
+                  href="https://github.com/murad-narimanli"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
 
                   <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
                     <Github className="w-5 h-5" />
                   </div>
-                  <span>github.com/murad</span>
+                  <span>github.com/murad-narimanli</span>
                 </a>
                 <a
                   href="https://www.linkedin.com/in/murad-n%C9%99rimanl%C4%B1-549389130/"
@@ -116,15 +136,6 @@ export function ContactSection() {
                     <Linkedin className="w-5 h-5" />
                   </div>
                   <span>linkedin.com/in/murad-nərimanlı</span>
-                </a>
-                <a
-                  href="#"
-                  className="flex items-center text-zinc-400 hover:text-blue-500 transition-colors group">
-
-                  <div className="w-10 h-10 rounded-full bg-zinc-900 flex items-center justify-center mr-4 group-hover:bg-blue-500/10 transition-colors">
-                    <Mail className="w-5 h-5" />
-                  </div>
-                  <span>hello@murad.dev</span>
                 </a>
               </div>
             </div>

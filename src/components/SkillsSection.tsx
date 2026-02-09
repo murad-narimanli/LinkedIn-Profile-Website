@@ -1,70 +1,70 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 const skills = {
-  Business: [
+  Frontend: [
   {
-    name: 'Project Management',
-    level: 90
-  },
-  {
-    name: 'Strategic Planning',
-    level: 85
-  },
-  {
-    name: 'Team Leadership',
-    level: 90
-  },
-  {
-    name: 'Business Development',
-    level: 85
-  },
-  {
-    name: 'Client Relations',
+    name: 'Vue 2/3 (Composition API)',
     level: 95
-  }],
-
-  Entertainment: [
+  },
   {
-    name: 'Event Management',
+    name: 'ReactJS / Next.js',
     level: 90
   },
   {
-    name: 'Creative Direction',
+    name: 'HTML5 / CSS3 / Sass',
+    level: 95
+  },
+  {
+    name: 'JavaScript / TypeScript',
+    level: 90
+  },
+  {
+    name: 'Micro-frontend Architecture',
+    level: 85
+  }],
+
+  'State & Tools': [
+  {
+    name: 'Redux / Vuex / Pinia',
+    level: 90
+  },
+  {
+    name: 'Webpack / Vite',
     level: 85
   },
   {
-    name: 'Content Strategy',
+    name: 'Git / GitLab CI/CD',
+    level: 85
+  },
+  {
+    name: 'REST / GraphQL',
+    level: 90
+  },
+  {
+    name: 'Jest / Testing',
+    level: 80
+  }],
+
+  'UI Frameworks': [
+  {
+    name: 'Tailwind CSS',
+    level: 95
+  },
+  {
+    name: 'Material Design',
+    level: 85
+  },
+  {
+    name: 'Ant Design',
     level: 80
   },
   {
-    name: 'Brand Management',
+    name: 'Chakra UI',
     level: 85
   },
   {
-    name: 'Production',
+    name: 'WebFlow',
     level: 75
-  }],
-
-  Tools: [
-  {
-    name: 'Marketing',
-    level: 85
-  },
-  {
-    name: 'Analytics',
-    level: 80
-  },
-  {
-    name: 'Social Media',
-    level: 90
-  },
-  {
-    name: 'Budgeting',
-    level: 85
-  },
-  {
-    name: 'Negotiation',
-    level: 90
   }]
 
 };
@@ -92,10 +92,25 @@ export function SkillsSection() {
           className="mb-16">
 
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            <span className="text-blue-500 font-mono text-xl mr-2">03.</span>
+            <span className="text-blue-500 font-mono text-xl mr-2">04.</span>
             Technical Skills
           </h2>
-          <div className="h-1 w-20 bg-blue-600 rounded-full" />
+          <motion.div
+            initial={{
+              width: 0
+            }}
+            whileInView={{
+              width: 80
+            }}
+            viewport={{
+              once: true
+            }}
+            transition={{
+              duration: 0.8,
+              delay: 0.2
+            }}
+            className="h-1 bg-blue-600 rounded-full" />
+
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -104,23 +119,37 @@ export function SkillsSection() {
             key={category}
             initial={{
               opacity: 0,
-              y: 20
+              y: 30,
+              scale: 0.95
             }}
             whileInView={{
               opacity: 1,
-              y: 0
+              y: 0,
+              scale: 1
             }}
             viewport={{
               once: true
             }}
             transition={{
               duration: 0.5,
-              delay: categoryIndex * 0.1
+              delay: categoryIndex * 0.15
             }}
-            className="bg-zinc-900/30 border border-zinc-800 rounded-xl p-6 hover:border-blue-500/30 transition-colors">
+            className="bg-zinc-900/30 border border-zinc-800 rounded-xl p-6 hover:border-blue-500/30 transition-colors group">
 
               <h3 className="text-xl font-bold text-white mb-6 flex items-center">
-                <span className="w-2 h-8 bg-blue-500 rounded-full mr-3" />
+                <motion.span
+                initial={{
+                  height: 0
+                }}
+                whileInView={{
+                  height: 32
+                }}
+                transition={{
+                  duration: 0.5,
+                  delay: 0.3 + categoryIndex * 0.1
+                }}
+                className="w-2 bg-blue-500 rounded-full mr-3 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
+
                 {category}
               </h3>
 
@@ -128,14 +157,14 @@ export function SkillsSection() {
                 {items.map((skill, index) =>
               <div key={skill.name}>
                     <div className="flex justify-between mb-2">
-                      <span className="text-zinc-300 font-medium">
+                      <span className="text-zinc-300 font-medium text-sm group-hover:text-blue-200 transition-colors">
                         {skill.name}
                       </span>
-                      <span className="text-zinc-500 font-mono text-sm">
+                      <span className="text-zinc-500 font-mono text-xs">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="h-2 bg-zinc-800 rounded-full overflow-hidden">
+                    <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
                       <motion.div
                     initial={{
                       width: 0
@@ -147,12 +176,27 @@ export function SkillsSection() {
                       once: true
                     }}
                     transition={{
-                      duration: 1,
-                      delay: 0.2 + index * 0.1
+                      duration: 1.2,
+                      delay: 0.4 + index * 0.1,
+                      ease: 'easeOut'
                     }}
-                    className="h-full bg-blue-600 rounded-full relative">
+                    className="h-full bg-blue-600 rounded-full relative overflow-hidden">
 
-                        <div className="absolute inset-0 bg-white/20 animate-pulse" />
+                        <motion.div
+                      initial={{
+                        x: '-100%'
+                      }}
+                      whileInView={{
+                        x: '100%'
+                      }}
+                      transition={{
+                        duration: 1.5,
+                        delay: 1.5 + index * 0.1,
+                        repeat: Infinity,
+                        repeatDelay: 3
+                      }}
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent w-full h-full" />
+
                       </motion.div>
                     </div>
                   </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, Children } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download } from 'lucide-react';
 import { Button } from './ui/Button';
@@ -8,10 +8,10 @@ export function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const roles = [
-  'Entertainment Professional',
-  'King Entertainment Corp',
-  'Creative Strategist',
-  'Business Leader'];
+  'Senior Frontend Developer',
+  'Vue & React Specialist',
+  'Fintech Engineer',
+  'Micro-frontend Architect'];
 
   const typingSpeed = 100;
   const deletingSpeed = 50;
@@ -121,6 +121,32 @@ export function HeroSection() {
       behavior: 'smooth'
     });
   };
+  const containerVariants = {
+    hidden: {
+      opacity: 0
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+  const itemVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut'
+      }
+    }
+  };
   return (
     <section
       id="hero"
@@ -133,47 +159,99 @@ export function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 20
-          }}
-          animate={{
-            opacity: 1,
-            y: 0
-          }}
-          transition={{
-            duration: 0.5
-          }}>
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="flex flex-col items-center">
 
-          <h2 className="text-blue-500 font-mono text-lg mb-4 tracking-wide">
+          {/* Profile Photo with Animated Border */}
+          <motion.div variants={itemVariants} className="relative mb-8 group">
+            {/* Animated Gradient Ring */}
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 rounded-full opacity-75 blur-sm animate-spin-slow" />
+
+            <motion.div
+              animate={{
+                y: [0, -10, 0]
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 4,
+                ease: 'easeInOut'
+              }}
+              className="relative w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#0a0a0a] overflow-hidden shadow-2xl">
+
+              <img
+                src="/1739266259653.jpg"
+                alt="Murad Nərimanlı"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+
+            </motion.div>
+          </motion.div>
+
+          <motion.h2
+            variants={itemVariants}
+            className="text-blue-500 font-mono text-lg mb-4 tracking-wide">
+
             Hi, my name is
-          </h2>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+          </motion.h2>
+
+          <motion.h1
+            variants={itemVariants}
+            className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight">
+
             Murad Nərimanlı
-          </h1>
-          <div className="h-12 md:h-16 mb-8 flex items-center justify-center">
+          </motion.h1>
+
+          <motion.div
+            variants={itemVariants}
+            className="h-12 md:h-16 mb-8 flex items-center justify-center">
+
             <span className="text-2xl md:text-4xl text-zinc-400 font-mono">
               I am a <span className="text-blue-400">{displayText}</span>
               <span className="animate-pulse text-blue-500">|</span>
             </span>
-          </div>
+          </motion.div>
 
-          <p className="max-w-2xl mx-auto text-zinc-400 text-lg mb-10 leading-relaxed">
-            I build accessible, pixel-perfect, performant, and secure web
-            applications. Focused on creating elegant solutions to complex
-            problems.
-          </p>
+          <motion.p
+            variants={itemVariants}
+            className="max-w-2xl mx-auto text-zinc-400 text-lg mb-10 leading-relaxed">
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button onClick={scrollToContact} size="lg" className="group">
-              Contact Me
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Senior Frontend Developer with 7+ years of experience building
+            high-scale fintech, banking, and gaming platforms. Specialized in
+            Vue 2/3, React, Next.js, and Micro-frontend architectures.
+          </motion.p>
+
+          <motion.div
+            variants={itemVariants}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4">
+
+            <Button
+              onClick={scrollToContact}
+              size="lg"
+              className="group relative overflow-hidden">
+
+              <span className="relative z-10 flex items-center">
+                Contact Me
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </span>
+              <motion.div
+                className="absolute inset-0 bg-blue-600"
+                initial={{
+                  x: '100%'
+                }}
+                whileHover={{
+                  x: 0
+                }}
+                transition={{
+                  duration: 0.3
+                }} />
+
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="group">
               View Resume
-              <Download className="ml-2 w-4 h-4" />
+              <Download className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
             </Button>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
 
@@ -186,7 +264,7 @@ export function HeroSection() {
           opacity: 1
         }}
         transition={{
-          delay: 1,
+          delay: 2,
           duration: 1
         }}
         className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
@@ -204,6 +282,20 @@ export function HeroSection() {
 
         </div>
       </motion.div>
+
+      <style jsx>{`
+        @keyframes spin-slow {
+          from {
+            transform: rotate(0deg);
+          }
+          to {
+            transform: rotate(360deg);
+          }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+      `}</style>
     </section>);
 
 }

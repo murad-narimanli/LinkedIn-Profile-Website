@@ -11,8 +11,16 @@ const navLinks = [
   href: '#experience'
 },
 {
+  name: 'Education',
+  href: '#education'
+},
+{
   name: 'Skills',
   href: '#skills'
+},
+{
+  name: 'Projects',
+  href: '#projects'
 },
 {
   name: 'Contact',
@@ -43,46 +51,98 @@ export function Navbar() {
     }
   };
   return (
-    <nav
+    <motion.nav
+      initial={{
+        y: -100
+      }}
+      animate={{
+        y: 0
+      }}
+      transition={{
+        duration: 0.6,
+        ease: 'easeOut'
+      }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0a0a0a]/80 backdrop-blur-md border-b border-zinc-800' : 'bg-transparent'}`}>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a
+          <motion.a
             href="#"
             onClick={(e) => scrollToSection(e, '#hero')}
+            initial={{
+              opacity: 0,
+              x: -20
+            }}
+            animate={{
+              opacity: 1,
+              x: 0
+            }}
+            transition={{
+              delay: 0.2,
+              duration: 0.5
+            }}
             className="text-xl font-bold font-mono tracking-tighter text-white hover:text-blue-500 transition-colors">
 
             &lt;Murad /&gt;
-          </a>
+          </motion.a>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) =>
-            <a
+            {navLinks.map((link, index) =>
+            <motion.a
               key={link.name}
               href={link.href}
               onClick={(e) => scrollToSection(e, link.href)}
+              initial={{
+                opacity: 0,
+                y: -20
+              }}
+              animate={{
+                opacity: 1,
+                y: 0
+              }}
+              transition={{
+                delay: 0.3 + index * 0.1,
+                duration: 0.5
+              }}
               className="text-sm font-medium text-zinc-400 hover:text-blue-500 transition-colors">
 
                 {link.name}
-              </a>
+              </motion.a>
             )}
-            <div className="flex items-center space-x-4 ml-4 border-l border-zinc-800 pl-4">
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 20
+              }}
+              animate={{
+                opacity: 1,
+                x: 0
+              }}
+              transition={{
+                delay: 0.8,
+                duration: 0.5
+              }}
+              className="flex items-center space-x-4 ml-4 border-l border-zinc-800 pl-4">
+
               <a
-                href="#"
-                className="text-zinc-400 hover:text-white transition-colors">
+                href="https://github.com/murad-narimanli"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-white transition-colors hover:scale-110 transform duration-200">
 
                 <Github className="w-5 h-5" />
               </a>
               <a
-                href="#"
-                className="text-zinc-400 hover:text-white transition-colors">
+                href="https://www.linkedin.com/in/murad-n%C9%99rimanl%C4%B1-549389130/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 hover:text-white transition-colors hover:scale-110 transform duration-200">
 
                 <Linkedin className="w-5 h-5" />
               </a>
-            </div>
+            </motion.div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -132,19 +192,23 @@ export function Navbar() {
             )}
               <div className="flex items-center space-x-6 px-3 py-4 mt-4 border-t border-zinc-800">
                 <a
-                href="#"
+                href="https://github.com/murad-narimanli"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-white transition-colors">
 
                   <Github className="w-6 h-6" />
                 </a>
                 <a
-                href="#"
+                href="https://www.linkedin.com/in/murad-n%C9%99rimanl%C4%B1-549389130/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-white transition-colors">
 
                   <Linkedin className="w-6 h-6" />
                 </a>
                 <a
-                href="#"
+                href="mailto:narimanli.murad@gmail.com"
                 className="text-zinc-400 hover:text-white transition-colors">
 
                   <Mail className="w-6 h-6" />
@@ -154,6 +218,6 @@ export function Navbar() {
           </motion.div>
         }
       </AnimatePresence>
-    </nav>);
+    </motion.nav>);
 
 }
