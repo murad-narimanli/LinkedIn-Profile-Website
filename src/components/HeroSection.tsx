@@ -225,7 +225,6 @@ export function HeroSection() {
             <Button variant="outline" size="lg" className="group">
               <a href="https://flowcv.com/resume/se42ekgcm4ld" target="_blank">
                  View Resume
-                <Download className="ml-2 w-4 h-4 group-hover:translate-y-1 transition-transform" />
               </a>
             </Button>
           </motion.div>
