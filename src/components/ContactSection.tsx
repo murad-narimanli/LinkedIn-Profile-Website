@@ -37,8 +37,8 @@ export function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-1 gap-12">
+          {/* <motion.div
             initial={{
               opacity: 0,
               x: -20
@@ -74,7 +74,7 @@ export function ContactSection() {
                 <Send className="w-4 h-4 ml-2" />
               </Button>
             </form>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
             initial={{
