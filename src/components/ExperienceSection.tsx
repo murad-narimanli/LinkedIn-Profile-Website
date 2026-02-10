@@ -5,9 +5,18 @@ import { Calendar, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
 import { Button } from './ui/Button';
 const experiences = [
 {
+  company: 'King Entertainment',
+  role: 'Senior Frontend Developer',
+  date: '08/2025 – Present',
+  location: 'Baku Azerbaijan',
+  description:
+  'Worked on large-scale gambling and gaming platforms using React and Next.js. Focused on building dynamic, high-performance user interfaces and integrating complex APIs for real-time game data and user activity tracking. Contributed to UI architecture, reusable component libraries, and optimization of client-side rendering.',
+  tech: ['React', 'Next.js', 'Gaming Platforms', 'Performance']
+},
+{
   company: 'Rabitabank OJSC',
   role: 'Senior Frontend Developer',
-  date: '08/2021 – Present',
+  date: '08/2021 – 08/2025',
   location: 'Baku Azerbaijan',
   description:
   'Developed and maintained a large-scale Internet Banking system using Vue 2 & 3 (Composition API). Designed and implemented Microfrontend architecture for better module isolation and scalability. Integrated REST APIs and consumed GraphQL queries for reporting tools. Configured custom Webpack builds, optimized bundles, and enabled CI/CD pipelines with GitLab.',
@@ -19,15 +28,6 @@ const experiences = [
   'Webpack',
   'Microfrontend']
 
-},
-{
-  company: 'King Entertainment',
-  role: 'Senior Frontend Developer',
-  date: '08/2025 – 01/2026',
-  location: 'Baku Azerbaijan',
-  description:
-  'Worked on large-scale gambling and gaming platforms using React and Next.js. Focused on building dynamic, high-performance user interfaces and integrating complex APIs for real-time game data and user activity tracking. Contributed to UI architecture, reusable component libraries, and optimization of client-side rendering.',
-  tech: ['React', 'Next.js', 'Gaming Platforms', 'Performance']
 },
 {
   company: 'ABB Bank OJSC',
